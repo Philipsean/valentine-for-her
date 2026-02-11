@@ -69,7 +69,7 @@ button {
 }
 
 .gif {
-    width: 400px;
+    width: 410px;
     margin-bottom: 20px;
     margin-left: 5px;
     display: none;
@@ -140,10 +140,10 @@ const mainQuestion = document.getElementById("mainQuestion");
 
 const noMessages = [
     "Are you sure? 😢",
-    "Really sure? sige ssad aku 🥺",
+    "Are youReally sure? sige ssad aku 🥺",
     "ssad naku love... 😢",
     "Hindi mo na ba me love? 😏",
-    "please i Yes mo na sad na aku 😌"
+    "please i Yes mo na sad na aku 🥺"
 ];
 
 let clickCount = 0;
@@ -184,7 +184,7 @@ yesBtn.addEventListener("click", () => {
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
-    heart.innerHTML = "❤️";
+    heart.innerHTML = "❤️""🤍";
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
@@ -202,6 +202,7 @@ setInterval(createHeart, 300);
 
 </body>
 </html>
+
 
 
 
