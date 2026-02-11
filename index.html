@@ -63,15 +63,24 @@ button {
 
 .success-message {
     margin-top: 25px;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    font-weight: bold;
     display: none;
 }
 
 .gif {
     width: 400px;
     margin-bottom: 20px;
-    margin-left: 115px;
+    margin-left: 25px;
     display: none;
+}
+.top-image {
+    width: 60%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Falling hearts */
@@ -93,12 +102,16 @@ button {
 <body>
 
 <div class="container">
+    <!-- Image at the top -->
+    <img class="top-image" id="topImage"
+        src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDFxdmhwYWU0bDlpOGNxcGU2bHdzOG5zOHZicjM4a2tsNWpkMTBvdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/abZ5exGrse0W4/giphy.gif" 
+         alt="Cute Love GIF" 
+         class="top-image">
 
-    <img class="gif" id="loveGif"
-         src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-         alt="Cute Love GIF">
+    
 
-    <h1>Will you be my Valentine? ❤️</h1>
+    <h1 id="mainQuestion">Love<br>Will you be my Valentine? ❤️</h1>
+    
 
     <div class="buttons">
         <button id="yesBtn">YES </button>
@@ -106,10 +119,14 @@ button {
     </div>
 
     <div class="success-message" id="successMessage">
-        I knew you would Hehe because
-        You're my forever Valentine❤️ <br>
-        I love you so much💕
+        I knew you would Hehe <br>
+        You're my forever Valentine❤️ <br>  
+        I love you so much love💕
     </div>
+    <br>
+    <img class="gif" id="loveGif"
+         src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+         alt="Cute Love GIF">
 
 </div>
 
@@ -118,6 +135,8 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const successMessage = document.getElementById("successMessage");
 const loveGif = document.getElementById("loveGif");
+const catgif = document.getElementById("catgif");
+const mainQuestion = document.getElementById("mainQuestion");
 
 const noMessages = [
     "Are you sure? 😢",
@@ -151,11 +170,14 @@ noBtn.addEventListener("click", () => {
         noBtn.style.display = "none";
     }
 });
-
+    
 yesBtn.addEventListener("click", () => {
     document.querySelector(".buttons").style.display = "none";
     successMessage.style.display = "block";
     loveGif.style.display = "block";
+    topImage.style.display = "none";
+    mainQuestion.style.display = "none";
+
 });
 
 /* Create falling hearts */
